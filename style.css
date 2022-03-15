@@ -46,3 +46,9 @@ body {
 .botao:hover {
     background-color: var(--corDoBotao);
 }
+
+span {
+    display: block;
+    position: relative;
+    bottom: 50%;
+}
