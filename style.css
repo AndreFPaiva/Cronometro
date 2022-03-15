@@ -26,6 +26,10 @@ body {
     font-family: 'Bebas Neue', cursive;
 }
 
+.containerBotao {
+    margin: 0 0 50%;
+}
+
 .botao {
     background-color: aliceblue;
     color: black;
