@@ -44,11 +44,12 @@ btn1.addEventListener("click", () => {
     return relogio.status = true;
 })
 
-
 const btn2 = document.getElementById("botaoParar");
 
 btn2.addEventListener("click", () => {
-    btn1.innerText = "Continuar";
+    if (btn1.innerText === "Iniciar" && relogio.status === true){
+        btn1.innerText = "Continuar";
+    }
     return relogio.status = false;
 })
 
