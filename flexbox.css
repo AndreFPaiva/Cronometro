@@ -1,0 +1,11 @@
+#visor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.containerBotao {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}

@@ -1,0 +1,44 @@
+:root {
+    --corDeFundo: #a9e0c2 ;
+    --corDoBotao: #adebf7;
+    --corDoPainel: #c7f7ad;
+}
+
+body {
+    background-color: var(--corDeFundo);
+
+}
+
+.container {
+    background-color: var(--corDoPainel);
+    width: 560px;
+    height: 320px;
+    margin: 0 auto;
+    border-radius: 20px;
+    display: relative;
+}
+
+#visor {
+    margin: 50% 0 0;
+    text-align: center;
+    height: 10rem;
+    font-size: 5rem;
+    font-family: 'Bebas Neue', cursive;
+}
+
+.botao {
+    background-color: aliceblue;
+    color: black;
+    border: 1px solid black;
+    padding: 1em;
+    border-radius: 5px;
+    margin: 2vw;
+    font-family: 'Bebas Neue', cursive;
+    font-size: 1.5em;
+    width: 135px;
+    height: 80px;
+}
+
+.botao:hover {
+    background-color: var(--corDoBotao);
+}
