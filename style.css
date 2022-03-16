@@ -51,4 +51,10 @@ span {
     display: block;
     position: relative;
     bottom: 50%;
+    right: 8%;
+}
+
+.zerar {
+    position: relative;
+    left: 0;
 }

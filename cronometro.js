@@ -1,42 +1,63 @@
 const relogio = {
-    horas: 0,
-    minutos: 0,
-    segundos: 0,
-    status: false,
+    minutoDezena: 0,
+    minutoUnidade: 0,
+    segundoDezena: 0,
+    segundoUnidade: 0,
+    miliSegundoDezena: 0,
+    miliSegundounidade: 0,
+    status: false
 }
 
 let cronometroAtivo = false;
 
-setInterval(mostraCronometro,1000);
+setInterval(mostraCronometro,10);
 
 function temporizador() {
     if (relogio.status === true){
-        relogio.segundos += 1;
-        
-        if (relogio.segundos === 60) {
-            relogio.minutos += 1;
-            relogio.segundos = 0;
+        relogio.miliSegundounidade += 1;
+
+        if (relogio.miliSegundounidade === 10) {
+            relogio.miliSegundoDezena += 1;
+            relogio.miliSegundounidade = 0;
         }
         
-        if (relogio.minutos === 60) {
-            relogio.horas += 1;
-            relogio.minutos = 0;
+        if (relogio.miliSegundoDezena === 10) {
+            relogio.segundoUnidade += 1;
+            relogio.miliSegundoDezena = 0;
+        }
+        
+        if (relogio.segundoUnidade === 10) {
+            relogio.segundoDezena += 1;
+            relogio.segundoUnidade = 0;
+        }
+
+        if (relogio.segundoDezena === 6) {
+            relogio.minutoUnidade += 1;
+            relogio.segundoDezena = 0;
+        }
+
+        if (relogio.minutoUnidade === 10) {
+            relogio.minutoDezena += 1;
+            relogio.minutoUnidade = 0;
         }
     }
 }
 
 function mostraCronometro() {
-    document.getElementById("visor").innerHTML = `${relogio.horas}:${relogio.minutos}:${relogio.segundos}`;
-    console.log(`${relogio.horas}:${relogio.minutos}:${relogio.segundos}`);
+    document.getElementById("visor").innerHTML = `${relogio.minutoDezena}${relogio.minutoUnidade}:${relogio.segundoDezena}${relogio.segundoUnidade}.${relogio.miliSegundoDezena}${relogio.miliSegundounidade}`;
 }
 
 function zerarCronometro() {
-    relogio.segundos = 0;
-    relogio.minutos = 0;
-    relogio.horas = 0;
+    relogio.minutoDezena = 0;
+    relogio.minutoUnidade = 0;
+    relogio.segundoDezena = 0;
+    relogio.segundoUnidade = 0;
+    relogio.miliSegundoDezena = 0;
+    relogio.miliSegundounidade = 0
+    return relogio.status = false;
 }
 
-var iniciar = setInterval(temporizador,1000);
+var iniciar = setInterval(temporizador,10);
 
 const btn1 = document.getElementById("botaoIniciar");
 
