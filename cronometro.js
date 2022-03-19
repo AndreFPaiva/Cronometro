@@ -59,30 +59,22 @@ function zerarCronometro() {
 
 var iniciar = setInterval(temporizador,10);
 
-const btn1 = document.getElementById("botaoIniciar");
+const btn1 = document.getElementById("botaoParar");
 
 btn1.addEventListener("click", () => {
-    return relogio.status = true;
+    if (relogio.status === false) {
+        btn1.innerHTML = '<i class="fa fa-pause" aria-hidden="true""></i>'
+        return relogio.status = true;
+    } else {
+        btn1.innerHTML = '<i class="fa fa-play" aria-hidden="true""></i>'
+        return relogio.status = false;
+    }
 })
 
-const btn2 = document.getElementById("botaoParar");
+const btn2 = document.getElementById("botaoRecomecar");
 
 btn2.addEventListener("click", () => {
-    if (btn1.innerText === "Iniciar" && relogio.status === true){
-        btn1.innerText = "Continuar";
-    }
-    return relogio.status = false;
-})
-
-const btn3 = document.getElementById("botaoRecomecar");
-
-btn3.addEventListener("click", () => {
     zerarCronometro();
-    btn1.innerText = "Iniciar";
+    btn1.innerHTML = '<i class="fa fa-play" aria-hidden="true""></i>'
     return relogio.status = false;
 })
-
-
-
-
-
