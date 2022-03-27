@@ -5,12 +5,12 @@
 }
 
 body {
-    background-color: var(--corDeFundo);
+    background-color: white;
 
 }
 
 .container {
-    background-color: var(--corDoPainel);
+    background-color: whitesmoke;
     width: 560px;
     height: 320px;
     margin: 0 auto;
@@ -35,7 +35,7 @@ body {
     color: black;
     border: 1px solid black;
     padding: 1em;
-    border-radius: 5px;
+    border-radius: 20px;
     margin: 2vw;
     font-family: 'Bebas Neue', cursive;
     font-size: 1.5em;

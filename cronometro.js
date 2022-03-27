@@ -1,3 +1,4 @@
+//Estrutura e funcionamento do cronômetro
 const relogio = {
     minutoDezena: 0,
     minutoUnidade: 0,
@@ -12,6 +13,7 @@ let cronometroAtivo = false;
 
 setInterval(mostraCronometro,10);
 
+//calculadora de tempo
 function temporizador() {
     if (relogio.status === true){
         relogio.miliSegundounidade += 1;
@@ -43,10 +45,12 @@ function temporizador() {
     }
 }
 
+//Mostra o cronômetro na tela
 function mostraCronometro() {
     document.getElementById("visor").innerHTML = `${relogio.minutoDezena}${relogio.minutoUnidade}:${relogio.segundoDezena}${relogio.segundoUnidade}.${relogio.miliSegundoDezena}${relogio.miliSegundounidade}`;
 }
 
+//Botão de zear o cronômetro
 function zerarCronometro() {
     relogio.minutoDezena = 0;
     relogio.minutoUnidade = 0;
@@ -59,6 +63,7 @@ function zerarCronometro() {
 
 var iniciar = setInterval(temporizador,10);
 
+//Funcionamento dos botões
 const btn1 = document.getElementById("botaoParar");
 
 btn1.addEventListener("click", () => {
